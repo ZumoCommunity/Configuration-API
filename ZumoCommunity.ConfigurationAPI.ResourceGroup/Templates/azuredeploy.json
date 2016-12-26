@@ -1,0 +1,128 @@
+﻿{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+	},
+	"variables": {
+		"UniqueId": "[uniqueString(resourceGroup().id)]",
+
+		"WebFarm-Name": "[concat('meetup-webfarm-', variables('UniqueId'))]",
+		"WebFarm-SKU": "Standard",
+		"WebFarm-WorkerSize": "1",
+		"WebFarm-WorkersCount": 1,
+
+		"ConfigurationApi-Name": "[concat('configuration-api-', variables('UniqueId'))]",
+
+		"ConfigurationStorage-Name": "[toLower(concat('ConfStrg', variables('UniqueId')))]",
+		"ConfigurationStorage-Type": "Standard_LRS"
+	},
+	"resources": [
+		{
+			"name": "[variables('WebFarm-Name')]",
+			"type": "Microsoft.Web/serverfarms",
+			"location": "[resourceGroup().location]",
+			"apiVersion": "2014-06-01",
+			"tags": {
+				"displayName": "WebFarm"
+			},
+			"properties": {
+				"name": "[variables('WebFarm-Name')]",
+				"sku": "[variables('WebFarm-SKU')]",
+				"workerSize": "[variables('WebFarm-WorkerSize')]",
+				"numberOfWorkers": "[variables('WebFarm-WorkersCount')]"
+			}
+		},
+		{
+			"name": "[variables('ConfigurationStorage-Name')]",
+			"type": "Microsoft.Storage/storageAccounts",
+			"location": "[resourceGroup().location]",
+			"apiVersion": "2015-06-15",
+			"dependsOn": [],
+			"tags": {
+				"displayName": "ConfigurationStorage"
+			},
+			"properties": {
+				"accountType": "[variables('ConfigurationStorage-Type')]"
+			}
+		},
+		{
+			"name": "[variables('ConfigurationApi-Name')]",
+			"type": "Microsoft.Web/sites",
+			"location": "[resourceGroup().location]",
+			"apiVersion": "2015-08-01",
+			"dependsOn": [
+				"[resourceId('Microsoft.Web/serverfarms', variables('WebFarm-Name'))]"
+			],
+			"tags": {
+				"[concat('hidden-related:', resourceId('Microsoft.Web/serverfarms', variables('WebFarm-Name')))]": "Resource",
+				"displayName": "ConfigurationApi"
+			},
+			"properties": {
+				"name": "[variables('ConfigurationApi-Name')]",
+				"serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('WebFarm-Name'))]",
+				"clientAffinityEnabled": false
+			},
+			"resources": [
+				{
+					"name": "web",
+					"type": "config",
+					"apiVersion": "2015-08-01",
+					"dependsOn": [
+						"[resourceId('Microsoft.Web/sites', variables('ConfigurationApi-Name'))]"
+					],
+					"tags": {
+						"displayName": "Settings"
+					},
+					"properties": {
+						"netFrameworkVersion": "v4.0",
+						"phpVersion": "",
+						"pythonVersion": "",
+						"nodeVersion": "",
+						"use32BitWorkerProcess": false,
+						"webSocketsEnabled": false,
+						"alwaysOn": true,
+						"javaVersion": null,
+						"autoHealEnabled": false,
+						"autoHealRules": {
+							"triggers": null,
+							"actions": null
+						}
+					}
+				},
+				{
+					"name": "connectionstrings",
+					"type": "config",
+					"apiVersion": "2015-08-01",
+					"dependsOn": [
+						"[resourceId('Microsoft.Web/sites', variables('ConfigurationApi-Name'))]",
+						"[resourceId('Microsoft.Storage/storageAccounts', variables('ConfigurationStorage-Name'))]"
+					],
+					"tags": {
+						"displayName": "ConnectionStrings"
+					},
+					"properties": {
+						"ConfigurationStorage": {
+							"type": "Custom",
+							"value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('ConfigurationStorage-Name'), ';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('ConfigurationStorage-Name')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value, ';')]"
+						}
+					}
+				},
+				{
+					"name": "appsettings",
+					"type": "config",
+					"apiVersion": "2015-08-01",
+					"dependsOn": [
+						"[resourceId('Microsoft.Web/sites', variables('ConfigurationApi-Name'))]"
+					],
+					"tags": {
+						"displayName": "ApplicationSettings"
+					},
+					"properties": {
+					}
+				}
+			]
+		}
+	],
+	"outputs": {
+	}
+}
