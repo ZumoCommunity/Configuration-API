@@ -47,9 +47,9 @@ namespace ZumoCommunity.ConfigurationAPI.Provider
 				{
 					value = await reader.GetConfigValueAsync(key);
 
-					if (value != null)
+					if (!string.IsNullOrWhiteSpace(value))
 					{
-						return _cache.GetOrAdd(key, value);
+						return _cache.GetOrAdd(key, value.Trim());
 					}
 				}
 			}
