@@ -25,6 +25,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZumoCommunity.Configuration
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZumoCommunity.ConfigurationAPI.Readers.Http", "Readers\ZumoCommunity.ConfigurationAPI.Readers.Http\ZumoCommunity.ConfigurationAPI.Readers.Http.csproj", "{0D07A775-593D-428B-A0A0-D495EF5560E4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuspec", "Nuspec", "{FB5EB93D-A0B3-4606-8D33-A0FCEAB4A939}"
+	ProjectSection(SolutionItems) = preProject
+		Nuspec\ZumoCommunity.ConfigurationProvider.Full.nuspec = Nuspec\ZumoCommunity.ConfigurationProvider.Full.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

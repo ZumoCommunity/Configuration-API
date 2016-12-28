@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>ZumoCommunity.ConfigurationProvider</id>
+        <version></version>
+        <title>ZumoCommunity.ConfigurationProvider</title>
+        <authors>Boyko Ant</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Set of classes to introduce single confguration management for all applications.</description>
+        <dependencies>
+            <dependency id="WindowsAzure.Storage" version="8.0.0" />
+        </dependencies>
+        <frameworkAssemblies>
+            <frameworkAssembly assemblyName="System" targetFramework="" />
+            <frameworkAssembly assemblyName="System.Configuration" targetFramework="" />
+            <frameworkAssembly assemblyName="System.Core" targetFramework="" />
+            <frameworkAssembly assemblyName="System.Data" targetFramework="" />
+            <frameworkAssembly assemblyName="System.Net.Http" targetFramework="" />
+            <frameworkAssembly assemblyName="System.Web.Http" targetFramework="" />
+        </frameworkAssemblies>
+    </metadata>
+    <files>
+        <file src="ZumoCommunity.ConfigurationAPI.Infrastructure.dll" target="lib\ZumoCommunity.ConfigurationAPI.Infrastructure.dll" />
+        <file src="ZumoCommunity.ConfigurationAPI.Infrastructure.pdb" target="lib\ZumoCommunity.ConfigurationAPI.Infrastructure.pdb" />
+        <file src="ZumoCommunity.ConfigurationAPI.Provider.dll" target="lib\ZumoCommunity.ConfigurationAPI.Provider.dll" />
+        <file src="ZumoCommunity.ConfigurationAPI.Provider.pdb" target="lib\ZumoCommunity.ConfigurationAPI.Provider.pdb" />
+        <file src="ZumoCommunity.ConfigurationAPI.Readers.Common.dll" target="lib\ZumoCommunity.ConfigurationAPI.Readers.Common.dll" />
+        <file src="ZumoCommunity.ConfigurationAPI.Readers.Common.pdb" target="lib\ZumoCommunity.ConfigurationAPI.Readers.Common.pdb" />
+        <file src="ZumoCommunity.ConfigurationAPI.Readers.Database.dll" target="lib\ZumoCommunity.ConfigurationAPI.Readers.Database.dll" />
+        <file src="ZumoCommunity.ConfigurationAPI.Readers.Database.pdb" target="lib\ZumoCommunity.ConfigurationAPI.Readers.Database.pdb" />
+        <file src="ZumoCommunity.ConfigurationAPI.Readers.Http.dll" target="lib\ZumoCommunity.ConfigurationAPI.Readers.Http.dll" />
+        <file src="ZumoCommunity.ConfigurationAPI.Readers.Http.pdb" target="lib\ZumoCommunity.ConfigurationAPI.Readers.Http.pdb" />
+        <file src="ZumoCommunity.ConfigurationAPI.Readers.TableStorage.dll" target="lib\ZumoCommunity.ConfigurationAPI.Readers.TableStorage.dll" />
+        <file src="ZumoCommunity.ConfigurationAPI.Readers.TableStorage.pdb" target="lib\ZumoCommunity.ConfigurationAPI.Readers.TableStorage.pdb" />
+    </files>
+</package>
