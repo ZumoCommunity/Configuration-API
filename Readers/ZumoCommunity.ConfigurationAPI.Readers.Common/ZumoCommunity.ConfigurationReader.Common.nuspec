@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>ZumoCommunity.ConfigurationReader.Common</id>
+        <version></version>
+        <authors>Boyko Ant</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>ZumoCommunity.ConfigurationReader.Common</description>
+        <frameworkAssemblies>
+            <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.6.1" />
+            <frameworkAssembly assemblyName="System.Configuration" targetFramework=".NETFramework4.6.1" />
+            <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.6.1" />
+        </frameworkAssemblies>
+    </metadata>
+    <files>
+        <file src="ZumoCommunity.ConfigurationAPI.Readers.Common.pdb" target="lib\net461\ZumoCommunity.ConfigurationAPI.Readers.Common.pdb" />
+        <file src="ZumoCommunity.ConfigurationAPI.Readers.Common.dll" target="lib\net461\ZumoCommunity.ConfigurationAPI.Readers.Common.dll" />
+        <file src="ZumoCommunity.ConfigurationAPI.Infrastructure.pdb" target="lib\net461\ZumoCommunity.ConfigurationAPI.Infrastructure.pdb" />
+        <file src="ZumoCommunity.ConfigurationAPI.Infrastructure.dll" target="lib\net461\ZumoCommunity.ConfigurationAPI.Infrastructure.dll" />
+    </files>
+</package>
