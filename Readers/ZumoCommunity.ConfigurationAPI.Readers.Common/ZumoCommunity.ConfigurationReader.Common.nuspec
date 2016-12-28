@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>ZumoCommunity.ConfigurationReader.Common</id>
-        <version></version>
+        <version>0.0.0</version>
         <authors>Boyko Ant</authors>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>ZumoCommunity.ConfigurationReader.Common</description>
