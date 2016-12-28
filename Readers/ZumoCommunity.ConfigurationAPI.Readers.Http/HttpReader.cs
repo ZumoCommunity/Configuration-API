@@ -18,7 +18,7 @@ namespace ZumoCommunity.ConfigurationAPI.Readers.Http
 		{
 			var urlBuilder = new StringBuilder();
 			urlBuilder.Append(baseUrl.Trim().TrimEnd('/'));
-			urlBuilder.Append("/");
+			urlBuilder.Append('/');
 			urlBuilder.Append(apiUrl.Trim(' ', '/'));
 
 			_url = urlBuilder.ToString();
