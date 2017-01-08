@@ -23,6 +23,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E4C67C0A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZumoCommunity.ConfigurationAPI.Tests", "Tests\ZumoCommunity.ConfigurationAPI.Tests\ZumoCommunity.ConfigurationAPI.Tests.csproj", "{22D235DC-2B0F-49D3-8F7E-C92302934684}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZumoCommunity.ConfigurationAPI.Readers.Http", "Readers\ZumoCommunity.ConfigurationAPI.Readers.Http\ZumoCommunity.ConfigurationAPI.Readers.Http.csproj", "{0D07A775-593D-428B-A0A0-D495EF5560E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuspec", "Nuspec", "{FB5EB93D-A0B3-4606-8D33-A0FCEAB4A939}"
+	ProjectSection(SolutionItems) = preProject
+		Nuspec\ZumoCommunity.ConfigurationProvider.Full.nuspec = Nuspec\ZumoCommunity.ConfigurationProvider.Full.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +68,10 @@ Global
 		{22D235DC-2B0F-49D3-8F7E-C92302934684}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22D235DC-2B0F-49D3-8F7E-C92302934684}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22D235DC-2B0F-49D3-8F7E-C92302934684}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D07A775-593D-428B-A0A0-D495EF5560E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D07A775-593D-428B-A0A0-D495EF5560E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D07A775-593D-428B-A0A0-D495EF5560E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D07A775-593D-428B-A0A0-D495EF5560E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,5 +81,6 @@ Global
 		{FDF1919E-2F58-4032-B9B7-FE001F58087D} = {6C40CEA8-0CCE-4640-AD49-E9A2CD642C23}
 		{9F2BC539-815A-475B-98B3-B149A961F648} = {6C40CEA8-0CCE-4640-AD49-E9A2CD642C23}
 		{22D235DC-2B0F-49D3-8F7E-C92302934684} = {E4C67C0A-8EFE-4E18-95B0-492317CE3933}
+		{0D07A775-593D-428B-A0A0-D495EF5560E4} = {6C40CEA8-0CCE-4640-AD49-E9A2CD642C23}
 	EndGlobalSection
 EndGlobal

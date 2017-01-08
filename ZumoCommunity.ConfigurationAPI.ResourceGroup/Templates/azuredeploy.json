@@ -124,5 +124,9 @@
 		}
 	],
 	"outputs": {
+		"ConfigurationApi-Name": {
+			"type": "string",
+			"value": "[variables('ConfigurationApi-Name')]"
+		}
 	}
 }

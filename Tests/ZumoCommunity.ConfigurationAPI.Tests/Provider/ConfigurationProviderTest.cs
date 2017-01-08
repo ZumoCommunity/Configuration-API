@@ -51,10 +51,10 @@ namespace ZumoCommunity.ConfigurationAPI.Tests.Provider
 		}
 
 		[Test]
-		[TestCase("key1", "val1", "val2")]
-		[TestCase("key1", "000", "qwe")]
-		[TestCase("key1", null, "777")]
-		public async Task CacheValuesOnlyAfterCall_Test(string key, string oldValue, string newValue)
+		[TestCase("key1", null, "value")]
+		[TestCase("key1", "", "qwe")]
+		[TestCase("key1", "     ", "real value")]
+		public async Task DoNotCacheEmptyValues_Test(string key, string oldValue, string newValue)
 		{
 			var reader = new InMemoryReader();
 			await _provider.AddConfigurationReaderAsync(reader);
@@ -63,9 +63,46 @@ namespace ZumoCommunity.ConfigurationAPI.Tests.Provider
 			Assert.IsNull(actual);
 
 			await reader.SetConfigValueAsync(key, oldValue);
+
+			actual = await _provider.GetConfigValueAsync(key);
+			Assert.IsNull(actual);
+
 			await reader.SetConfigValueAsync(key, newValue);
 
 			actual = await _provider.GetConfigValueAsync(key);
+			Assert.AreNotEqual(oldValue, actual);
+			Assert.AreEqual(newValue, actual);
+		}
+
+		[Test]
+		[TestCase("key1", " asd ", "asd")]
+		[TestCase("key1", "  123", "123")]
+		[TestCase("key1", "zzz   ", "zzz")]
+		public async Task TrimCachedValues_Test(string key, string value, string trimmedValue)
+		{
+			var reader = new InMemoryReader();
+			await _provider.AddConfigurationReaderAsync(reader);
+
+			await reader.SetConfigValueAsync(key, value);
+
+			var actual = await _provider.GetConfigValueAsync(key);
+			Assert.AreNotEqual(value, actual);
+			Assert.AreEqual(trimmedValue, actual);
+		}
+
+		[Test]
+		[TestCase("key1", "val1", "val2")]
+		[TestCase("key1", "000", "qwe")]
+		[TestCase("key1", null, "777")]
+		public async Task CacheValuesOnlyAfterCall_Test(string key, string oldValue, string newValue)
+		{
+			var reader = new InMemoryReader();
+			await _provider.AddConfigurationReaderAsync(reader);
+
+			await reader.SetConfigValueAsync(key, oldValue);
+			await reader.SetConfigValueAsync(key, newValue);
+
+			var actual = await _provider.GetConfigValueAsync(key);
 			Assert.AreNotEqual(oldValue, actual);
 			Assert.AreEqual(newValue, actual);
 		}
