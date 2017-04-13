@@ -24,7 +24,7 @@ namespace ZumoCommunity.ConfigurationAPI.API.Repository
 
 			var configurationStorage = task.Result;
 
-			var reader = new TableStorageReader(configurationStorage);
+			var reader = new TableStorageReader(configurationStorage, "ConfigurationAPIConfiguration");
 			Task.Run(() => reader.InitializeAsync()).Wait();
 
 			builder.RegisterInstance(reader).As<IConfigurationReader>();
