@@ -11,7 +11,7 @@ namespace ZumoCommunity.ConfigurationAPI.Tests.Readers
 		private InMemoryReader _reader;
 
 		[OneTimeSetUp]
-		public async Task Initialize()
+		public async Task InitializeAsync()
 		{
 			_reader = new InMemoryReader();
 

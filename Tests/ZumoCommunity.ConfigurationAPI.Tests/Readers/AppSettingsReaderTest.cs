@@ -11,7 +11,7 @@ namespace ZumoCommunity.ConfigurationAPI.Tests.Readers
 		private AppSettingsReader _reader;
 
 		[OneTimeSetUp]
-		public async Task Initialize()
+		public async Task InitializeAsync()
 		{
 			_reader = new AppSettingsReader();
 		}

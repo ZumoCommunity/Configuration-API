@@ -11,7 +11,7 @@ namespace ZumoCommunity.ConfigurationAPI.Tests.Readers
 		private ConnectionStringsReader _reader;
 
 		[OneTimeSetUp]
-		public async Task Initialize()
+		public async Task InitializeAsync()
 		{
 			_reader = new ConnectionStringsReader();
 		}

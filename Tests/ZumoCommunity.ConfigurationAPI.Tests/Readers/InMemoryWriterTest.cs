@@ -11,7 +11,7 @@ namespace ZumoCommunity.ConfigurationAPI.Tests.Readers
 		private InMemoryReader _reader;
 
 		[SetUp]
-		public void Initialize()
+		public void InitializeAsync()
 		{
 			_reader = new InMemoryReader();
 		}
