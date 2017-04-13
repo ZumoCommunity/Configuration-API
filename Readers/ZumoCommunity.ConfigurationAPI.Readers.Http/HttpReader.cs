@@ -14,7 +14,7 @@ namespace ZumoCommunity.ConfigurationAPI.Readers.Http
 		private readonly string _keyName;
 		private readonly string _valueName;
 
-		public HttpReader(string baseUrl, string apiUrl = "api/configuration", string keyName = "key", string valueName = "value")
+		public HttpReader(string baseUrl, string apiUrl = "api/v1/configuration", string keyName = "key", string valueName = "value")
 		{
 			var urlBuilder = new StringBuilder();
 			urlBuilder.Append(baseUrl.Trim().TrimEnd('/'));
