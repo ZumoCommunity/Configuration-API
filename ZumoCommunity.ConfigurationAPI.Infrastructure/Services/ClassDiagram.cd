@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="ZumoCommunity.ConfigurationAPI.Infrastructure.Services.IConfigurationProvider">
+    <Position X="0.5" Y="2.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\IConfigurationProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ZumoCommunity.ConfigurationAPI.Infrastructure.Services.IConfigurationReader">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Services\IConfigurationReader.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ZumoCommunity.ConfigurationAPI.Infrastructure.Services.IConfigurationWriter">
+    <Position X="3.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Services\IConfigurationWriter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
