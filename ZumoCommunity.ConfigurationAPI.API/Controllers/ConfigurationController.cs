@@ -7,7 +7,7 @@ using ZumoCommunity.ConfigurationAPI.Infrastructure.Services;
 
 namespace ZumoCommunity.ConfigurationAPI.API.Controllers
 {
-	[RoutePrefix("api/configuration")]
+	[RoutePrefix("api/v1/configuration")]
 	public class ConfigurationController : ApiController
 	{
 		private IConfigurationReader _configurationReader;
